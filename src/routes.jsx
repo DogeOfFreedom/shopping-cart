@@ -1,8 +1,7 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RedirectToHome from "./RedirectToHome";
-import Home from "./Home";
+import Home from "./pages/Home";
 import App from "./App";
-import Shop from "./Shop";
+import Shop from "./pages/Shop";
 import ErrorPage from "./ErrorPage";
 
 const routes = [

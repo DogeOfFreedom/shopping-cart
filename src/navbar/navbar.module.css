@@ -1,0 +1,61 @@
+@import url(../index.css);
+
+nav {
+    display: flex;
+    background-color: var(--dark-strong);
+    position: fixed;
+    width: 100%;
+    max-height: var(--nav-height);
+}
+
+a, a:active {
+    text-decoration: none;
+    color: rgb(227, 227, 227);
+    font-family: americanCaptain;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    padding: 10px 0px 10px 10px;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    font-family: americanCaptain;  
+}
+
+.navOptionsContainer {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:antiquewhite;
+}
+
+.clickableTab {
+    padding: 0px 20px;
+    height: 100%;
+    transition: border-bottom 100ms ease-in-out;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.clickableTab:hover, .selectedTab {
+    border-bottom: 5px solid var(--highlight);
+}
+
+.selectedTab {
+    color: var(--highlight);
+}
+
+.clickableTab:hover {
+    background-color: var(--dark-strong-highlight);
+}
+
+.checkout {
+    flex: 1
+}

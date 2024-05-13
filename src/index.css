@@ -1,0 +1,21 @@
+@font-face {
+    font-family: americanCaptain;
+    src: url("./public/RosmatikaRegular.ttf");
+}
+
+:root {
+    /* Measurements */
+    --nav-height: 50px;
+
+    /* Colours */
+    --highlight: rgb(56, 156, 228);
+    --dark-strong: rgb(16, 17, 17);
+    --dark-strong-highlight: rgb(46, 48, 62);
+    --dark-mid: rgb(33, 32, 32);
+    --dark-light: rgb(74, 73, 73);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}

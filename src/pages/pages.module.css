@@ -1,0 +1,15 @@
+@import url(../index.css);
+
+.pageContainer {
+    padding: 0px 25px;
+    padding-top: calc(var(--nav-height) + 20px);
+    height: 100vh;
+    font-family: americanCaptain;
+    background-color: var(--dark-mid);
+    box-sizing: border-box;
+}
+
+.pageTitle {
+    margin: 0px;
+    color: var(--highlight);
+}
