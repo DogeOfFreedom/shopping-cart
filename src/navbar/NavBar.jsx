@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "./navbar.module.css";
 import ClickableTab from "./ClickableTab";
 import { useState } from "react";
 
 const NavBar = () => {
-  const [index, setIndex] = useState(0);
+  const { name } = useParams();
 
   return (
     <nav className={styles.nav}>
@@ -18,15 +18,13 @@ const NavBar = () => {
           text="Home"
           url="/home"
           index={1}
-          selected={index === 1}
-          set={setIndex}
+          selected={name === "home"}
         />
         <ClickableTab
           text="Shop"
           url="/shop"
           index={2}
-          selected={index === 2}
-          set={setIndex}
+          selected={name === "shop"}
         />
       </div>
       <div className={styles.checkout}></div>
