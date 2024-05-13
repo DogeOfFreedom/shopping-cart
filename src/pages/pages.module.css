@@ -4,12 +4,34 @@
     padding: 0px 25px;
     padding-top: calc(var(--nav-height) + 20px);
     height: 100vh;
-    font-family: americanCaptain;
+    font-family: rosmatika;
     background-color: var(--dark-mid);
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .pageTitle {
     margin: 0px;
     color: var(--highlight);
+}
+
+.fadeable {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 300ms;
+}
+
+.fadeIn {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.fadeAway {
+    transform: translateX(100px);
+    opacity: 0;
 }

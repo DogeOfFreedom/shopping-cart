@@ -1,6 +1,11 @@
 @font-face {
-    font-family: americanCaptain;
+    font-family: rosmatika;
     src: url("./public/RosmatikaRegular.ttf");
+}
+
+@font-face {
+    font-family: ubuntuMono;
+    src: url("./public/UbuntuMono-Regular.ttf");
 }
 
 :root {
@@ -16,6 +21,7 @@
 }
 
 body {
+    background-color: var(--dark-mid);
     margin: 0px;
     padding: 0px;
 }

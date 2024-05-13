@@ -1,0 +1,31 @@
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+h3 {
+    font-family: ubuntuMono;
+}
+
+h1, h3 {
+    color: white;
+}
+
+.heroText {
+    font-size: 70px;
+    text-align: center;
+    margin: 0px;
+}
+
+.shopButton {
+    font-family: ubuntuMono;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 15px;
+    background-color: var(--highlight);
+    color: white;
+}
