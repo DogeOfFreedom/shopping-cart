@@ -33,6 +33,10 @@ a, a:active {
 }
 
 .clickableTab {
+    font-family: rosmatika;
+    color: white;
+    background-color: rgba(0,0,0,0);
+    border: 0px;
     padding: 0px 20px;
     height: 100%;
     transition: border-bottom 100ms ease-in-out;

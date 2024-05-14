@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import styles from "./navbar.module.css";
 import ClickableTab from "./ClickableTab";
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-const NavBar = () => {
+const NavBar = ({ duration, setFadeOut }) => {
   const { name } = useParams();
-
+  console.log(name);
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
@@ -17,19 +17,26 @@ const NavBar = () => {
         <ClickableTab
           text="Home"
           url="/home"
-          index={1}
           selected={name === "home"}
+          duration={duration}
+          setFadeOut={setFadeOut}
         />
         <ClickableTab
           text="Shop"
           url="/shop"
-          index={2}
           selected={name === "shop"}
+          duration={duration}
+          setFadeOut={setFadeOut}
         />
       </div>
       <div className={styles.checkout}></div>
     </nav>
   );
+};
+
+NavBar.propTypes = {
+  duration: PropTypes.number,
+  setFadeOut: PropTypes.func,
 };
 
 export default NavBar;

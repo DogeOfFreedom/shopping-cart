@@ -1,7 +1,7 @@
 @import url(../index.css);
 
 .pageContainer {
-    padding: 0px 25px;
+    padding: 25px 25px;
     padding-top: calc(var(--nav-height) + 20px);
     height: 100vh;
     font-family: rosmatika;
@@ -23,15 +23,16 @@
     transform: translateX(-100px);
     opacity: 0;
     transition-property: transform, opacity;
-    transition-duration: 300ms;
+    transition-duration: 200ms;
 }
 
 .fadeIn {
+    transition-delay: 200ms;
     transform: translateX(0px);
     opacity: 1;
 }
 
-.fadeAway {
+.fadeOut {
     transform: translateX(100px);
     opacity: 0;
 }

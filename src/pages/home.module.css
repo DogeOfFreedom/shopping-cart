@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .contentContainer {
     display: flex;
     flex-direction: column;
@@ -5,6 +9,9 @@
     align-items: center;
     gap: 20px;
     height: 100%;
+    width: 100%;
+    background-color: var(--dark-light);
+    border-radius: 15px;
 }
 
 h3 {
