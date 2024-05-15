@@ -2,17 +2,15 @@ import { useNavigate } from "react-router-dom";
 import styles from "./pages.module.css";
 import home from "./home.module.css";
 import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 const Home = ({ duration, fadeOut, setFadeOut }) => {
   const navigate = useNavigate();
   const ref = useRef();
 
   useEffect(() => {
-    setTimeout(() => ref.current.classList.add(styles.fadeIn), 50);
-
     return () => {
       setFadeOut(false);
-      console.log("set fadeOut = false");
     };
   }, []);
 
@@ -25,7 +23,9 @@ const Home = ({ duration, fadeOut, setFadeOut }) => {
     <>
       <div className={`${styles.pageContainer}`}>
         <div
-          className={`${home.contentContainer} ${styles.fadeable} 
+          className={`${styles.contentContainer} ${home.contentContainer} ${
+            styles.fadeable
+          } 
           ${fadeOut ? styles.fadeOut : ""}`}
           ref={ref}
         >
@@ -38,6 +38,12 @@ const Home = ({ duration, fadeOut, setFadeOut }) => {
       </div>
     </>
   );
+};
+
+Home.propTypes = {
+  duration: PropTypes.number,
+  fadeOut: PropTypes.bool,
+  setFadeOut: PropTypes.func,
 };
 
 export default Home;

@@ -1,0 +1,117 @@
+@import url(../index.css);
+
+.contentContainer {
+    gap: 0px;
+}
+
+.pageTitle {
+    margin: 0px 0px 25px 0px;
+    color: white;
+    font-size: 45px;
+    padding-left: 20px;
+    font-family: rosmatika;
+}
+
+.shopContainer {
+    background-color: var(--dark-light);
+    width: 100%;
+    border-radius: 15px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: ubuntuMono;
+    padding: 25px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.loading {
+    --len: 100px;
+    --border-width: 3px;
+    
+    height: var(--len);
+    width: var(--len);
+    border: var(--border-width) solid var(--dark-light);
+    border-top: var(--border-width) solid var(--highlight);
+    border-radius: var(--len);
+    position: absolute;
+    left: calc(50% + var(--border-width) - var(--len) / 2);
+    top: calc(var(--nav-height) + 50px);
+
+    animation: 700ms loading-spin infinite linear;
+}
+
+@keyframes loading-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.errorContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0px 40px;
+    
+    a {
+        font-family: ubuntuMono;
+        color: var(--highlight);
+        font-size: 25px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 50px;
+        font-family: ubuntuMono;
+    }
+}
+
+.remove {
+    display: none;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 25px;
+}
+
+.navBtn {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    font-family: ubuntuMono;
+    font-size: 24px;
+    border-radius: 15px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    transition: box-shadow 50ms ease-in-out;
+}
+
+.navBtn:hover {
+    color: var(--dark-strong);
+    background-color: rgb(255, 255, 255);
+}
+
+.navBtn:active {
+    color: white;
+    background-color: var(--highlight);
+}
+
+.pageNumber {
+    color: white;
+    font-size: 24px;
+    font-family: ubuntuMono;
+}
+
+.hidden {
+    visibility: hidden;
+}

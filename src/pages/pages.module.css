@@ -1,36 +1,51 @@
 @import url(../index.css);
 
 .pageContainer {
-    padding: 25px 25px;
-    padding-top: calc(var(--nav-height) + 20px);
+    --padding: 40px;
+
+    padding: var(--padding);
+    padding-top: calc(var(--nav-height) + var(--padding));
     height: 100vh;
-    font-family: rosmatika;
+    font-family: ubuntuMono;
     background-color: var(--dark-mid);
     box-sizing: border-box;
+    font-family: rosmatika;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    animation: 300ms
+    
 }
 
-.pageTitle {
-    margin: 0px;
-    color: var(--highlight);
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    border-radius: 15px;
 }
 
 .fadeable {
-    transform: translateX(-100px);
-    opacity: 0;
+    
     transition-property: transform, opacity;
     transition-duration: 200ms;
+    animation: 200ms fadeIn linear;
+    animation-iteration-count: 1;
 }
 
-.fadeIn {
-    transition-delay: 200ms;
-    transform: translateX(0px);
-    opacity: 1;
+@keyframes fadeIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
+
+
 
 .fadeOut {
     transform: translateX(100px);

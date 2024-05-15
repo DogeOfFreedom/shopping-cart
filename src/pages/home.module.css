@@ -1,21 +1,20 @@
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .contentContainer {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    height: 100%;
-    width: 100%;
     background-color: var(--dark-light);
-    border-radius: 15px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 h3 {
     font-family: ubuntuMono;
+    font-size: 30px;
 }
 
 h1, h3 {
@@ -23,7 +22,7 @@ h1, h3 {
 }
 
 .heroText {
-    font-size: 70px;
+    font-size: 90px;
     text-align: center;
     margin: 0px;
 }
@@ -32,7 +31,7 @@ h1, h3 {
     font-family: ubuntuMono;
     padding: 10px 20px;
     border-radius: 15px;
-    font-size: 15px;
+    font-size: 30px;
     background-color: var(--highlight);
     color: white;
 }

@@ -5,7 +5,8 @@ nav {
     background-color: var(--dark-strong);
     position: fixed;
     width: 100%;
-    max-height: var(--nav-height);
+    height: var(--nav-height);
+    z-index: 1;
 }
 
 a, a:active {
@@ -17,11 +18,15 @@ a, a:active {
 .logo {
     flex: 1;
     display: flex;
-    padding: 10px 0px 10px 10px;
+    padding: 10px 0px;
     align-items: center;
     color: black;
-    font-size: 20px;
-    font-family: rosmatika;  
+    font-size: 30px;
+    font-family: rosmatika;
+    
+    a {
+        margin-left: 20px;
+    }
 }
 
 .navOptionsContainer {
@@ -34,14 +39,15 @@ a, a:active {
 
 .clickableTab {
     font-family: rosmatika;
+    font-size: 20px;
     color: white;
     background-color: rgba(0,0,0,0);
     border: 0px;
     padding: 0px 20px;
     height: 100%;
+    width: 100px;
     transition: border-bottom 100ms ease-in-out;
     box-sizing: border-box;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

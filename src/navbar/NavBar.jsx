@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 const NavBar = ({ duration, setFadeOut }) => {
   const { name } = useParams();
-  console.log(name);
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>

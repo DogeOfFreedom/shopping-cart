@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
   const { name } = useParams();
-  const duration = 200;
+  const duration = 150;
   const [fadeOut, setFadeOut] = useState(false);
 
   return (
