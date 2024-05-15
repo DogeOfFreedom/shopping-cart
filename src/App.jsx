@@ -13,6 +13,7 @@ function App() {
   return (
     <div>
       <NavBar duration={duration} setFadeOut={setFadeOut} />
+      <h1>{name}</h1>
       {name === "home" ? (
         <Home duration={duration} fadeOut={fadeOut} setFadeOut={setFadeOut} />
       ) : (

@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App Component > renders home component by default 1`] = `
+<div>
+  <div>
+    <nav
+      class="_nav_344b47"
+    >
+      <div
+        class="_logo_344b47"
+      >
+        <a
+          class=""
+          href="/home"
+        >
+          Menzei
+        </a>
+      </div>
+      <div
+        class="_navOptionsContainer_344b47"
+      >
+        <button
+          class="_clickableTab_344b47 _selectedTab_344b47"
+        >
+          <span>
+            Home
+          </span>
+        </button>
+        <button
+          class="_clickableTab_344b47"
+        >
+          <span>
+            Shop
+          </span>
+        </button>
+      </div>
+      <div
+        class="_checkout_344b47"
+      />
+    </nav>
+    <h1>
+      home
+    </h1>
+    <div
+      class="_pageContainer_c151ab"
+    >
+      <div
+        class="_contentContainer_c151ab _contentContainer_83b5c1 _fadeable_c151ab 
+          "
+      >
+        <h3>
+          Ever wanted to look like an NPC?
+        </h3>
+        <h1
+          class="_heroText_83b5c1"
+        >
+          Menzei's Got You
+        </h1>
+        <button
+          class="_shopButton_83b5c1"
+        >
+          Shop Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

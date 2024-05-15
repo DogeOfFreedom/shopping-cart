@@ -14,15 +14,13 @@ const Shop = ({ fadeOut, setFadeOut }) => {
   const limit = 6;
 
   useEffect(() => {
-    // setTimeout(() => ref.current.classList.add(styles.fadeIn), 50);
-
     return () => {
       setFadeOut(false);
     };
   }, []);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products?limit=${limit}`)
+    fetch(`https://fakestoreapi.com/products`)
       .then((res) => res.json())
       .then((json) => setItems(json))
       .catch((e) => setError(e))
@@ -32,7 +30,7 @@ const Shop = ({ fadeOut, setFadeOut }) => {
   const goPrevPage = () => setPage(page - 1);
   const goNextPage = () => setPage(page + 1);
 
-  if (loading) return <div className={shop.loading}></div>;
+  if (loading) return <div data-testid="loader" className={shop.loading}></div>;
   if (error)
     return (
       <div className={shop.errorContainer}>
@@ -67,7 +65,12 @@ const Shop = ({ fadeOut, setFadeOut }) => {
               &lt;&lt; Prev
             </button>
             <p className={shop.pageNumber}>{`Page ${page}`}</p>
-            <button onClick={goNextPage} className={shop.navBtn}>
+            <button
+              onClick={goNextPage}
+              className={`${shop.navBtn} ${
+                page >= Math.ceil(items.length / limit) && shop.hidden
+              }`}
+            >
               Next &gt;&gt;
             </button>
           </div>
