@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./navbar.module.css";
 import ClickableTab from "./ClickableTab";
 import PropTypes from "prop-types";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../App";
 
 const NavBar = ({ items, duration, setFadeOut, showCheckout }) => {
