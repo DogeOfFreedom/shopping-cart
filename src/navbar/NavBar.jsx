@@ -11,8 +11,8 @@ const NavBar = ({ items, duration, setFadeOut, showCheckout }) => {
 
   const themeImgUrl =
     theme === "dark"
-      ? "./public/icons8-dark-mode-50.png"
-      : "./public/icons8-light-mode-78.png";
+      ? "./icons8-dark-mode-50.png"
+      : "./icons8-light-mode-78.png";
 
   const changeTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -60,7 +60,7 @@ const NavBar = ({ items, duration, setFadeOut, showCheckout }) => {
         >
           <span>Quantity: {items}</span>
           <button onClick={showCheckout}>
-            <img src="./public/icons8-checkout-100.png" alt="checkout icon" />
+            <img src="./icons8-checkout-100.png" alt="checkout icon" />
           </button>
         </div>
         <button onClick={changeTheme} className={styles.themeBtn}>

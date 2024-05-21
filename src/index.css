@@ -1,11 +1,11 @@
 @font-face {
     font-family: rosmatika;
-    src: url("./public/RosmatikaRegular.ttf");
+    src: url("./assets/fonts/RosmatikaRegular.ttf");
 }
 
 @font-face {
     font-family: ubuntuMono;
-    src: url("./public/UbuntuMono-Regular.ttf");
+    src: url("./assets/fonts/UbuntuMono-Regular.ttf");
 }
 
 :root {
