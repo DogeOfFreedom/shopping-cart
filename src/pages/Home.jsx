@@ -12,7 +12,7 @@ const Home = ({ duration, fadeOut, setFadeOut }) => {
     return () => {
       setFadeOut(false);
     };
-  }, []);
+  }, [setFadeOut]);
 
   const handleTimeLink = () => {
     setFadeOut(true);
@@ -30,7 +30,7 @@ const Home = ({ duration, fadeOut, setFadeOut }) => {
           ref={ref}
         >
           <h3>Ever wanted to look like an NPC?</h3>
-          <h1 className={home.heroText}>Menzei's Got You</h1>
+          <h1 className={home.heroText}>Menzei&apos;s Got You</h1>
           <button className={home.shopButton} onClick={handleTimeLink}>
             Shop Now
           </button>

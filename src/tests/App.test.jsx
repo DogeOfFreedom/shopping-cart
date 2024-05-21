@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 
 const mocks = vi.hoisted(() => {
   return {
-    export: vi.fn(),
+    useParam: vi.fn(),
   };
 });
 
@@ -13,13 +13,13 @@ vi.mock("react-router-dom", async (importOriginal) => {
   const actual = await importOriginal();
   return {
     ...actual,
-    useParams: mocks.export,
+    useParams: mocks.useParam,
   };
 });
 
 describe("App Component", () => {
   it("renders home component on '/home' route", () => {
-    mocks.export.mockReturnValue({ name: "home" });
+    mocks.useParam.mockReturnValue({ name: "home" });
 
     render(
       <MemoryRouter>
@@ -31,7 +31,7 @@ describe("App Component", () => {
   });
 
   it("renders shop component on '/shop' route", async () => {
-    mocks.export.mockReturnValue({ name: "shop" });
+    mocks.useParam.mockReturnValue({ name: "shop" });
 
     render(
       <MemoryRouter>

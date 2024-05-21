@@ -2,7 +2,7 @@ import { useState } from "react";
 import card from "./card.module.css";
 import PropTypes from "prop-types";
 
-const ShopCard = ({ data, addItems }) => {
+const ShopCard = ({ data, cart, addToCart }) => {
   const [quantity, setQuantity] = useState(0);
 
   const increase = () => setQuantity(quantity + 1);
@@ -11,12 +11,41 @@ const ShopCard = ({ data, addItems }) => {
     setQuantity(newQuantity);
   };
   const add = () => {
-    addItems(quantity);
+    if (quantity <= 0) {
+      return;
+    }
+
+    const newCart = [...cart];
+
+    // Check if item already exists
+    let inCart = false;
+    const len = newCart.length;
+    for (let i = 0; i < len; i++) {
+      const item = cart[i];
+      if (item.id === id) {
+        item.quantity += quantity;
+        inCart = true;
+        break;
+      }
+    }
+
+    if (!inCart) {
+      const newItem = {
+        id,
+        title,
+        url,
+        price,
+        quantity,
+      };
+      newCart.push(newItem);
+    }
+
+    addToCart(newCart);
     setQuantity(0);
   };
 
+  const id = data.id;
   const title = data.title;
-  // const description = data.description;
   const url = data.image;
   const price = data.price;
   const rating = data.rating.rate;
@@ -33,14 +62,14 @@ const ShopCard = ({ data, addItems }) => {
           <p className={card.text}>{`${reviewCount} reviews`}</p>
         </div>
       </div>
-      {/* <p className={card.text}>{description}</p> */}
       <div className={card.inputContainer}>
         <div className={card.incrementContainer}>
           <div className={card.quantityContainer}>
             <input
               type="number"
               value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+              min={0}
             />
             <button className={card.controlBtn} onClick={increase}>
               +
@@ -60,7 +89,8 @@ const ShopCard = ({ data, addItems }) => {
 
 ShopCard.propTypes = {
   data: PropTypes.object,
-  addItems: PropTypes.func,
+  cart: PropTypes.array,
+  addToCart: PropTypes.func,
 };
 
 export default ShopCard;

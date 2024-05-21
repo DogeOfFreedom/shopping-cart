@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import ShopCard from "./ShopCard";
 import { Link } from "react-router-dom";
 
-const Shop = ({ fadeOut, setFadeOut }) => {
+const Shop = ({ fadeOut, setFadeOut, cart, addToCart }) => {
   const ref = useRef(null);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -17,18 +17,22 @@ const Shop = ({ fadeOut, setFadeOut }) => {
     return () => {
       setFadeOut(false);
     };
-  }, []);
+  }, [setFadeOut]);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products`)
+    fetch(`https://fakestoreapi.com/products`, { mode: "cors" })
       .then((res) => res.json())
       .then((json) => setItems(json))
       .catch((e) => setError(e))
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const goPrevPage = () => setPage(page - 1);
   const goNextPage = () => setPage(page + 1);
+  const getItemsToShow = () =>
+    [...items].slice((page - 1) * limit, page * limit);
 
   if (loading) return <div data-testid="loader" className={shop.loading}></div>;
   if (error)
@@ -52,8 +56,13 @@ const Shop = ({ fadeOut, setFadeOut }) => {
           <h1 className={shop.pageTitle}>Shop</h1>
           <div className={shop.shopContainer}>
             {items &&
-              items.map((item) => (
-                <ShopCard key={item.id} data={item} setItems={setItems} />
+              getItemsToShow().map((item) => (
+                <ShopCard
+                  key={item.id}
+                  data={item}
+                  cart={cart}
+                  addToCart={addToCart}
+                />
               ))}
           </div>
 
@@ -81,9 +90,10 @@ const Shop = ({ fadeOut, setFadeOut }) => {
 };
 
 Shop.propTypes = {
-  duration: PropTypes.number,
   fadeOut: PropTypes.bool,
   setFadeOut: PropTypes.func,
+  cart: PropTypes.array,
+  addToCart: PropTypes.func,
 };
 
 export default Shop;

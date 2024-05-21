@@ -1,0 +1,130 @@
+@import url("../index.css");
+
+:root {
+    --width: 600px;
+    --card-height: 200px;
+    --radius: 15px;
+}
+
+.checkoutModal {
+    height: 100%;
+    min-width: var(--width);
+    margin: 0px;
+    margin-left: auto;
+    border-radius: 10px 0px 0px 10px;
+    border: 0px;
+    box-sizing: border-box;
+    background-color: var(--dark-mid);
+    font-family: ubuntuMono;
+    transform: translateX(var(--width));
+    transition: transform 300ms ease-in-out;
+}
+
+.slideIn {
+    transform: translateX(0px);
+}
+
+::backdrop {
+    background-color: rgba(0,0,0,0.9);
+}
+
+.title {
+    font-family: rosmatika;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-light);
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    gap: 15px;
+    box-shadow: 0px 5px var(--dark-strong);
+    margin-bottom: 25px;
+}
+
+.receiptContainer {
+    font-size: 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    border: 2px solid var(--dark-strong);
+    border-radius: 15px;
+    
+    box-shadow: 0px 5px black;
+
+    transition-property: box-shadow transform;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+}
+
+.paymentBtn {
+    background-color: white;
+    margin-top: 30px;
+}
+
+.paymentBtn:hover {
+    background-color: var(--highlight);
+    color: white;
+}
+
+.cancelBtn {
+    margin-top: 20px;
+}
+
+.cancelBtn:hover {
+    background-color: rgb(212, 76, 76);
+    color: white;
+}
+
+.btn:active {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+/* Checkout Card Styles */
+.checkoutCard {
+    max-height: var(--card-height);
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: var(--radius);
+    padding: 10px 20px;
+    gap: 10px;
+    box-shadow: 0px 2px var(--dark-strong);
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+
+    div {
+        display: flex;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+.cardTitle{
+    max-width: 400px;
+    font-size: 18px;
+}
+
+.cardText {
+    font-size: 20px;
+}
+
+.cardImg {
+    height: calc(var(--card-height) - 100px);
+    width: auto;
+}

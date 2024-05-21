@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Shop Page > updates counter when add button is pressed 1`] = `
+<div>
+  <div>
+    <nav
+      class="_nav_344b47"
+    >
+      <div
+        class="_logo_344b47"
+      >
+        <a
+          class=""
+          href="/home"
+        >
+          Menzei
+        </a>
+      </div>
+      <div
+        class="_navOptionsContainer_344b47"
+      >
+        <button
+          class="_clickableTab_344b47"
+        >
+          <span>
+            Home
+          </span>
+        </button>
+        <button
+          class="_clickableTab_344b47 _selectedTab_344b47"
+        >
+          <span>
+            Shop
+          </span>
+        </button>
+      </div>
+      <div
+        class="_checkout_344b47 false"
+      >
+        <span>
+          Quantity: 
+          0
+        </span>
+        <button>
+          <img
+            alt="checkout icon"
+            src="./public/icons8-checkout-100.png"
+          />
+        </button>
+      </div>
+    </nav>
+    <div
+      class="_loading_98b23e"
+      data-testid="loader"
+    />
+  </div>
+</div>
+`;
